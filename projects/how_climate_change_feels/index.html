@@ -55,7 +55,6 @@
     font-size: 14px;
     background-color: #f4f4f4;
     padding: 5px;
-    border: 1px solid #ccc;
   }
 
 </style>
@@ -214,14 +213,14 @@
 This is a new text.
 another line
 <code>
-  # only 'ref_area' without numerical characters
-  df_exp = df_exp.loc[~(df_exp['ref_area'].str.endswith(('0', '1', '2', '3', '4', '5', '6', '7', '8', '9')))]
-  df_exp.reset_index(drop=True, inplace=True)
-  
-  # only relevant values of 'measure', 'sex', 'age'
-  df_pop = df_pop[(df_pop['measure']=='POP') & (df_pop['unit_measure']=='PS') & (df_pop['sex']=='_T') &\
-                  (df_pop['age']=='_T')]
-  df_pop.reset_index(drop=True, inplace=True)
+  # only 'ref_area' without numerical characters<br>
+  df_exp = df_exp.loc[~(df_exp['ref_area'].str.endswith(('0', '1', '2', '3', '4', '5', '6', '7', '8', '9')))]<br>
+  df_exp.reset_index(drop=True, inplace=True)<br>
+  <br>
+  # only relevant values of 'measure', 'sex', 'age'<br>
+  df_pop = df_pop[(df_pop['measure']=='POP') & (df_pop['unit_measure']=='PS') & (df_pop['sex']=='_T') &\<br>
+                  (df_pop['age']=='_T')]<br>
+  df_pop.reset_index(drop=True, inplace=True)<br>
   df_pop = df_pop.drop(['measure', 'unit_measure', 'sex', 'age'], axis='columns')
 </code>
 another line
