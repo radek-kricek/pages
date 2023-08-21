@@ -237,14 +237,16 @@ Perhaps the effects of global warming on how we feel will also persuade some to 
 <p>
 The first deep get-to-know with the data by using statistical methods belongs to the most exciting parts of my work as a data analyst.
 Until now, we can only guess but with real numbers, the true links, dependencies and connections come to the surface.
-I used several useful tools to analyze the data. Pandas comes with calculations of correlation coefficients, which I used for establishing the link between time and population exposure of individual countries and of the world.
+I used several useful tools to analyze the data. Pandas comes with calculations of <b>correlation coefficients</b>, which I used for establishing the link between time and population exposure of individual countries and of the world.
 What I was even more curious about was the assumed correlation between population exposure and temperature anomaly (how much warmer the climate is compared to the past).
 It proved to be really strong. Also, warming of about 1 °C led to about 20 % more people exposed to extreme heat worldwide.
-Another tools I used were libraries <b>Scikit-learn and SciPy, allowing me to apply k-means clustering and A/B testing</b>.
-The code for the whole analysis can be found in the <b>analysis.ipynb</b> notebook in my GitHub repository.
 </p>
 <p>
   picture of pop exp vs temp anomaly + caption
+</p>
+<p>
+Another tools I used were libraries <b>Scikit-learn and SciPy, allowing me to apply k-means clustering and A/B testing</b>.
+The code for the whole analysis can be found in the <b>analysis.ipynb</b> notebook in my GitHub repository.
 </p>
 <p>
   <b>Visualizations</b>
@@ -268,18 +270,28 @@ The exposure also increased for most of the countries, although there were excep
   Although the method is simple and results should be a subject of further discussion, I personally find it an interesting result to think about.
 </p>
 <p>
+  Curious about more insights into the data? You can find all of them in my <a href="https://radek-kricek.github.io/pages/presentation_graduation.pdf">graduation presentation</a>.
+</p>
+<p>
   map with 2 clusters
 </p>
 <p>
-  Further ideas
+  <b>Next steps</b>
 </p>
 <p>
-See all the exciting (or worrying?) <b>results</b> in my <a href="https://radek-kricek.github.io/pages/presentation_graduation.pdf">graduation presentation.</a>
+  There is so much more to explore about this. I would be happy to continue when the time allows but if a curious reader wants to continue on their own, here is several suggestions:
 </p>
-<p>
-Check <b>detailed documentation</b> and code chunks or even the whole <b>Jupyter notebooks and prepared data</b> in the 
-<a href="https://github.com/radek-kricek/population-exposure-climate-change">GitHub repo.</a>
-</p>
+<ul>
+  <li>
+  <p>Refine the method of splitting countries into groups based on their exposure to heat and economic situation.</p>
+  </li>
+  <li>
+  <p>Investigate, how individual countries moved within the GDP/exposure space in the past.</p>
+  </li>
+  <li>
+  <p>Explore more about the impacts of climate change in the databse of OECD: there is data on flooding, droughts, wildfires, and more.</p>
+  </li>
+  </ul>
 <figure><img src="https://radek-kricek.github.io/pages/images/clusters_2.png"/>
 </figure>
 <figure><img src="https://radek-kricek.github.io/pages/images/lineplot_countries.png"/>
