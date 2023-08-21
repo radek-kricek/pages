@@ -200,13 +200,25 @@
       
     </header>
     <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l">
-<p>When studying <a href="https://www.spiced-academy.com/en">at the Spiced Academy</a>, I decided to graduate with a project which will relate to climate change but also to the people.</p>
-<p>I discovered <b>exciting data sources</b>
+<p>When studying <a href="https://www.spiced-academy.com/en">at the Spiced Academy</a>, I decided to graduate with a project which will relate to climate change but also to the people.
+Because with my personal history, helping environmental NGOs, the topic is evr present in the back of my mind.
+And I have tried a lot helping the environment but we should not forget about the vulnerable communities, too.
+Perhaps the effects of global warming on how we feel will also persuade some to push for faster change towards sustainable future.
+</p>
+<p>
+<b>The data</b>
+</p>
+<p>After reviewing what is available, I discovered exciting data sources
   in the <a href="https://data-explorer.oecd.org/">database of OECD</a>, describing the exposure of populations across the world to different weather phenomena in time. Focusing on extreme temperatures, I managed to
   perform a detailed analysis of the developments of the last 40 years. Adding <a href="https://data.giss.nasa.gov/gistemp/">climate data from NASA</a>
   and <a href="https://unstats.un.org/unsd/snaama/">economic data from the United Nations</a>, I was able to answer even more questions
   about the pressing issue.</p>
-<p><b>The main topics of the analysis were:</b></p>
+<p>
+  The advantage of (inter)governmental bodies is that the data is highly reliable and also relatively clean.
+  Still, it was necessary to perform some cleaning and data wrangling to be able to perform all the intended calculations and merge different datasets together.
+  I did all this processing using Pandas. You can see the code in the <b>cleaning.ipynb</b> notebook in my GitHub repository.
+</p>
+<p><b>The main topics of the analysis were:</b>
 <ul>
 <li>
 <p>What percentage of people has direct experience with extreme heat?</p>
@@ -221,9 +233,46 @@
 <p>Is there a clear link between wealth and heat exposure of populations?</p>
 </li>
 </ul>
+</p>
 <p>
-I dived into the cleaning, wrangling, analyzing and plotting using <b>Python</b> and its amazing libraries - mainly <b>Pandas and Plotly</b>, but also <b>Pycountry, Scikit-learn and SciPy</b>.
-Thus, I could discover correlations, cluster by k-means and perform A/B testing. Using Plotly, I created neat interactive visualizations and animations.</p>
+The first deep get-to-know with the data by using statistical methods belongs to the most exciting parts of my work as a data analyst.
+Until now, we can only guess but with real numbers, the true links, dependencies and connections come to the surface.
+I used several useful tools to analyze the data. Pandas comes with calculations of correlation coefficients, which I used for establishing the link between time and population exposure of individual countries and of the world.
+What I was even more curious about was the assumed correlation between population exposure and temperature anomaly (how much warmer the climate is compared to the past).
+It proved to be really strong. Also, warming of about 1 °C led to about 20 % more people exposed to extreme heat worldwide.
+Another tools I used were libraries <b>Scikit-learn and SciPy, allowing me to apply k-means clustering and A/B testing</b>.
+The code for the whole analysis can be found in the <b>analysis.ipynb</b> notebook in my GitHub repository.
+</p>
+<p>
+  picture of pop exp vs temp anomaly + caption
+</p>
+<p>
+  <b>Visualizations</b>
+</p>
+<p>
+Analysis and statistics is intriguing but visualizing goes with it hand in hand and allows real overall understanding.
+I decided to create simple but interactive visualizations in <b>Plotly Express</b>, which could also be exported as static and used in my graduation presentation.
+I got to practice choropleth maps, scatter plots and linecharts. The code can be found in the <b>vizzes.ipynb</b> notebook in my GitHub repository and all the plots in the 'vizzes' folder.
+</p>
+<p><b>Results</b></p>
+<p>
+  So what were the main results the data revealed? First, the average amount of people who exprienced extreme heat at least one day per year was lately reaching up to 70 % worldwide and grew fast over the last four decades.
+The exposure also increased for most of the countries, although there were exceptions. These could be caused for example by demographic changes and migrations within the countries.
+</p>
+<p>animation</p>
+<p>
+  Second, it is possible to get insights from splitting countries into two groups considering population exposure and GDP per capita (using k-means). In one group, the level of inconvenience caused by heat exposure
+  is very large and low GDP per capita, or the GDP per capita is slightly larger but does not compensate for the level of heat.
+  In the second group, we find countries with low population exposures or higher exposures compensated by high GDP per capita.
+  From this I conclude that indeed there is certain injustice about the effects of climate change on different countries and present a map of the two groups.
+  Although the method is simple and results should be a subject of further discussion, I personally find it an interesting result to think about.
+</p>
+<p>
+  map with 2 clusters
+</p>
+<p>
+  Further ideas
+</p>
 <p>
 See all the exciting (or worrying?) <b>results</b> in my <a href="https://radek-kricek.github.io/pages/presentation_graduation.pdf">graduation presentation.</a>
 </p>
