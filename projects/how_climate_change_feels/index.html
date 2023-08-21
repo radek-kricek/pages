@@ -239,11 +239,11 @@ The first deep get-to-know with the data by using statistical methods belongs to
 Until now, we can only guess but with real numbers, the true links, dependencies and connections come to the surface.
 I used several useful tools to analyze the data. Pandas comes with calculations of <b>correlation coefficients</b>, which I used for establishing the link between time and population exposure of individual countries and of the world.
 What I was even more curious about was the assumed correlation between population exposure and temperature anomaly (how much warmer the climate is compared to the past).
-It proved to be really strong. Also, warming of about 1 °C led to about 15 % more people exposed to extreme heat worldwide.
+It proved to be really strong. Also, warming of about 1 °C led to about 15 % more people exposed to extreme heat worldwide (Fig 1).
 </p>
-<p>
-  picture of pop exp vs temp anomaly + caption
-</p>
+<figure><img src="exp_vs_temp_anomaly.png"/>
+</figure>
+<p><i>Fig 1. Over the last 40 years, the temprature increased about 1 °C, leading to about 15 % more people exposed to extreme heat worldwide.</i></p>
 <p>
 Another tools I used were libraries <b>Scikit-learn and SciPy, allowing me to apply k-means clustering and A/B testing</b>.
 The code for the whole analysis can be found in the <b>analysis.ipynb</b> notebook in my GitHub repository.
@@ -259,19 +259,21 @@ I got to practice choropleth maps, scatter plots and linecharts. The code can be
 <p><b>Results</b></p>
 <p>
   So what were the main results the data revealed? First, the average amount of people who exprienced extreme heat at least one day per year was lately reaching up to 70 % worldwide and grew fast over the last four decades.
-The exposure also increased for most of the countries, although there were exceptions. These could be caused for example by demographic changes and migrations within the countries.
+The exposure also increased for most of the countries (Fig 2). There were several exceptions, which could have been caused for example by demographic changes and migrations within the countries.
 </p>
-<p>animation</p>
+<figure><img src="https://radek-kricek.github.io/pages/images/lineplot_countries.png"/>
+</figure>
+<p><i>Fig 2. For most countries, the population exposure to extreme heat increased, also shown by the dashed trend lines.</i></p>
 <p>
   Second, it is possible to get insights from splitting countries into two groups considering population exposure and GDP per capita (using k-means). In one group, the level of inconvenience caused by heat exposure
   is very large and low GDP per capita, or the GDP per capita is slightly larger but does not compensate for the level of heat.
   In the second group, we find countries with low population exposures or higher exposures compensated by high GDP per capita.
   From this I conclude that indeed there is certain injustice about the effects of climate change on different countries and present a map of the two groups.
-  Although the method is simple and results should be a subject of further discussion, I personally find it an interesting result to think about.
+  Although the method is simple and results should be a subject of further discussion, I personally find it an interesting result to think about (Fig 3).
 </p>
-<p>
-  map with 2 clusters
-</p>
+<figure><img src="https://radek-kricek.github.io/pages/images/clusters_2_legend.png"/>
+</figure>
+<p><i>Fig 3. Countries can be split into two groups, considering their exposure to heat and material well-being.</i></p>
 <p>
   Curious about more insights into the data? You can find all of them in my <a href="https://radek-kricek.github.io/pages/presentation_graduation.pdf">graduation presentation</a>.
 </p>
@@ -292,10 +294,6 @@ The exposure also increased for most of the countries, although there were excep
   <p>Explore more about the impacts of climate change in the database of OECD: there is data on flooding, droughts, wildfires, and more.</p>
   </li>
   </ul>
-<figure><img src="https://radek-kricek.github.io/pages/images/clusters_2.png" width="1200" height="600"/>
-</figure>
-<figure><img src="https://radek-kricek.github.io/pages/images/lineplot_countries.png"/>
-</figure>
 
 <!--
 <ul class="pa0">
