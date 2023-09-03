@@ -206,7 +206,7 @@
   From cleaning to analysis and final presentation, I was using <b>Python with its Pandas, SciPy and Seaborn libraries</b>.
 </p>
 <p>
-  The code for this project is available in the <b>deliverando_kpis.ipynb notebook</b> <a href="https://github.com/radek-kricek/deliverando-kpis">in the GitHub repository</a>.
+  The code for this project is available in the <b>deliverando_business_intelligence.ipynb notebook</b> <a href="https://github.com/radek-kricek/deliverando-kpis">in the GitHub repository</a>.
 </p>
 
 <p><br></p>
@@ -221,6 +221,14 @@
 Probably the main obstacle in the cleaning process were geographical locations in restaurants and the presence of restaurant chains with more than one franchises.
 For example, I discovered some suspicious records about restaurants which might have been located outside of the interest area (Graz region, Austria).
 Since I could not ask the data collectors, I decided case by case if the restaurants should be included in the analysis based on other related information and documented my decision.
+</p>
+
+<p>
+Because the data sets contained real restaurant names, I anonymized them using Python's faker library, while in the same time attempting to generate Austrian sounding
+restaurant names. The code is documented in the <b>anonymization.ipynb notebook</b> <a href="https://github.com/radek-kricek/deliverando-kpis">in the GitHub repository</a>.
+</p>
+
+<p>
 It was also necessary to carefully decide, if the restaurants in chains should be considered as individual places or rather as companies and if some KPIs should be summed up or averaged as the result.
 The decision depended mainly on the purpose and to some extent on the availability of data.
 In the end I decided to present the overall results for chains which were more relevant to the analysis.
@@ -244,13 +252,13 @@ In the end I decided to present the overall results for chains which were more r
 <p>
 In the course of the analysis, I performed <b>grouping</b> in the Deliverando data frame to derive the overall KPIs,
 <b>pivoting</b> to apply the df.describe() method to get more statistical insights, <b>A/B testing</b> and a lot of filtering.
-I used <b>Pandas</b> and <b>SciPy</b> in this part. One of the results is TOP10 competitor's restaurants and their performance under Deliverando (Tab 1).
+I used <b>Pandas</b> and <b>SciPy</b> in this part. One of the results is TOP10 competitor's restaurants and their performance under Deliverando (Fig 1).
 </p>
 <figure><img src="https://radek-kricek.github.io/pages/images/deliverando_table.png"/>
 </figure>
 <p>
-<i>Tab 1. TOP10 restaurants by sales for competition and their sales at Deliverando.
-  In this sample, Deliverando is doing better only at McDonald's, but this means nothing else but room for improvement!</i>
+<i>Fig 1. TOP10 restaurants by sales for competition and their sales at Deliverando.
+  In this sample, Deliverando is lacking behind, but this means nothing else but room for improvement!</i>
 </p>
 
 <p><br></p>
@@ -268,7 +276,7 @@ Alternatively, go through some of the results in the following paragraphs.
 <p><br></p>
 <p><b>Results</b></p>
 <p>
-  See some examples of the results below, showcasing the good trajectory our company is taking in Graz and the example of improving KPI (Fig 1 - 3).
+  See some examples of the results below, showcasing the good trajectory our company is taking in Graz and the example of improving KPI (Fig 2 - 4).
   Also some challenges are present, demonstrated by the fast growing competition.
   The <i>p-value</i> in Fig 3 tells us that this result is on the brink of statistical significance, and we should pay attention to this measure in the future to look for trends.
   All in all, I always attempt to communicate in a smooth and unified way.
@@ -276,17 +284,17 @@ Alternatively, go through some of the results in the following paragraphs.
 <figure><img src="https://radek-kricek.github.io/pages/images/deliverando_growth.png"/>
 </figure>
 <p>
-<i>Fig 1. The number of restaurants active on Deliverando and the number of orders via the platform rose between the two months.</i>
+<i>Fig 2. The number of restaurants active on Deliverando and the number of orders via the platform rose between the two months.</i>
 </p>
 <figure><img src="https://radek-kricek.github.io/pages/images/deliverando_time_acc.png"/>
 </figure>
 <p>
-<i>Fig 2. The registered restaurants managed to decrease the average time to accept an order which led to almost 19 minutes less of insecurity for our customers!</i>
+<i>Fig 3. The registered restaurants managed to decrease the average time to accept an order which led to almost 4 days of insecurity less for our customers!</i>
 </p>
 <figure><img src="https://radek-kricek.github.io/pages/images/deliverando_market_share.png"/>
 </figure>
 <p>
-<i>Fig 3. Despite the previous positive KPIs, the competitors rose slightly faster and we need to reflect it in our decision making.</i>
+<i>Fig 4. Despite the previous positive KPIs, the competitors rose slightly faster and we need to reflect it in our decision making.</i>
 </p>
 
 <p><br></p>
@@ -294,7 +302,7 @@ Alternatively, go through some of the results in the following paragraphs.
   <b>Business proposals and next steps</b>
 </p>
 <p>
-Based on the findings, I proposed a number of measures and directions for further inquiries. The corresponding slide is shown in Fig 4.
+Based on the findings, I proposed a number of measures and directions for further inquiries. The corresponding slide is shown in Fig 5.
 </p>
 <ul>
   <li>
@@ -310,7 +318,7 @@ Based on the findings, I proposed a number of measures and directions for furthe
   <figure><img src="https://radek-kricek.github.io/pages/images/deliverando_proposals.png"/>
   </figure>
   <p>
-    <i>Fig 4. Suggestions for stakeholders.</i>
+    <i>Fig 5. Suggestions for stakeholders.</i>
     </p>
 
 <!--
