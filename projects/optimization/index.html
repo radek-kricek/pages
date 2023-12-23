@@ -173,22 +173,6 @@
 
 
 
-<!--
-  <div id="sharing" class="mt3 ananke-socials">
-    
-      
-      <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://radek-kricek.github.io/pages/projects/how_climate_change_feels/&amp;title=How Climate Change Feels Around the Globe" class="ananke-social-link linkedin no-underline" aria-label="share on LinkedIn">
-        
-        <span class="icon"> <svg style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
-</svg>
-</span>
-        
-      </a>
-    
-  </div>-->
-
-
       <h1 class="f1 athelas mt3 mb1">Optimizing Nightlife</h1>
       
       
@@ -202,29 +186,36 @@
     <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l">
 <p>The first weeks at my new job in data analytics inspired me to start using the 'minimize' optimization module from Python's 'scipy.optimize' package. What is it good for?
   As the name suggests, it's about finding the optimal values for us to solve a problem.
-  More mathematically speaking, is searches for the minima of a given function, including functions of more variables. And we can also set conditions for the search.
-  I found this module particularly useful for finding optimal values of variables when exact analytical solution led to values not reachable in real life.
+  More mathematically speaking, is searches for the minima of a given function, including functions of multiple variables. And we can also set conditions for the search.
+  I found this module particularly useful for finding optimal values of variables when an exact analytical solution led to values that are not achievable in real life.
 </p>
 
 <p><br></p>
 <p>
   <b>The Principle</b>
 </p>
+
+
 <p>
   The 'minimize' module minimizes the value of a function.
-  This can be for example the difference between some desired values and values we are generating and which we cannot reach fully, like in the situation described below.
+  This can be, for example, the difference between some desired values and values that we generate and that we cannot achieve completely, as in the situation described below.
   The solution is restricted by certain conditions and depends on several variables.
-  The algorithm searches for the extreme (in this case the minimum) of the function whch might look like in the pic.
+  The algorithm searches for the extreme value (in this case the minimum) of the function, which could look like in Fig. 1, for example.
   It is important to note that it needs to start somewhere.
   The starting point is set by the initial guess argument.
   We can of course imagine functions with more complicated shape and multiple local minima.
-  The initial guess would then determine which minimum will be found so it is important to come up with a good estimate.
-  The algorithm chooses a mathematical approach best suited for the specific problem, but we can also give it the desired method as an argument. (<b>check it!</b>)
-  And one last note to the theory.
+  The initial guess would then determine which minimum is found, so it is important to come up with a good estimate or try more options.
+  The algorithm chooses a mathematical approach that is suitable for the specific problem, but we can also give it the desired method as an argument.
+  And one last comment on the theory.
   The package uses two types of conditions: bounds and constraints.
-  Bounds are simply the border values between which a certain variable can lie.
+  Bounds are simply the limits between which a certain variable can lie.
   Constraints are additional conditions for the relationship between the variables.
 </p>
+
+<figure><img src="https://radek-kricek.github.io/pages/images/optimization_function.png"/>
+</figure>
+<p><i>Fig 1. A paraboloid with maximum at [0, 0, 4].
+  From wikimedia by IkamusumeFan under the <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.en">CC BY-SA 4.0 Deed license.</a></i></p>
 
 <p><br></p>
 <p>
@@ -232,7 +223,7 @@
 </p>
 <p>
   Let's imagine something specific.
-  We could have a plan to visit clubs in Berlin in certain ratio of nights:
+  I could have a plan for visiting clubs in Berlin in certain ratio of nights:
   <ul>
     <li>
     <p>SchwuZ: 28 %</p>
@@ -250,7 +241,7 @@
       <p>Berghain 10 %</p>
     </li>
     </ul>
-  However, after 24 weeks of my stay in the city, out of 32, I realize I am pretty much off the track.
+  After 24 of my 32 weeks in the city, however, I have to realise that I'm pretty much off track.
   The current shares for clubs so far look like this:
   <ul>
     <li>
@@ -272,183 +263,43 @@
 </p>
 
 <p>
-  If you do some simple calculations, you will see that with the remaining number of weeks, it is impossible to reach the original goal exactly.
-  The numbers would have to follow <b>this formula</b> and some values would fall outside of the 0 - 100 % interval.
-  But don't worry, it's not a big deal, let's try to approach it as much as possible.
+  If you do some simple calculations, you will see that with the remaining number of weeks it is impossible to reach the original goal exactly.
+  The numbers would have to follow the formula derived in Fig. 2 and some values would fall outside of the 0 - 100 % interval.
+  But don't worry, it's not a big deal, let's try to approach the goal as much as possible.
   For this we will use the optimization.
-  We need to minimize the difference between the targets and between values, which are determined by the equation above.
-  So this is the function to minimize!
+  We need to minimize the difference between the targets and between values which are determined by the equation above.
+  So this difference is the function to minimize!
   It has five variables, corresponding to the five clubs, and we are looking for their optimal values.
   We mustn't forget to set the boundaries (0 - 100) and our constraint (all five values need to sum up to 100 %).
   And that's basically it.
-  The algorithm will search for the minimum of the function in the given range of values and satisfying our constraint.
-  <b>comment on local/global</b>
-  The differences between the goal and final shares range from about 0.9 to 3.4 %.
+  The algorithm will search for the minimum of the function in the given range of values that satisfy our constraint.
+  The computed differences between the goal and final shares range from about 0.9 to 3.4 %.
+</p>
+
+<figure><img src="https://radek-kricek.github.io/pages/images/optimization_math.png"/>
+</figure>
+<p><i>Fig 2. The math behind the problem.</i></p>
+
+<p>
+  A note: in this case, a different initial guess leads virtually to the same result.
+  In other situations, it is advisable to try various values of the guess to prevent the algorithm from falling into a local minimum instead of the global one.
+</p>
+
+<p>
   Interested in the code?
   <a href="https://github.com/radek-kricek/optimization/blob/main/optimization.ipynb">Just check the notebook on my github!</a>
 </p>
 
 
-<p>
-  <ul>
-    <li>
-    <p>Finding data (OECD, NASA, UN).</p>
-    </li>
-    <li>
-    <p>Exploring and cleaning (Pandas).</p>
-    </li>
-    <li>
-      <p>Combining data sets and analysis. Time series, correlations, A/B testing, k-means clustering (Pandas, SciPy, Scikit-learn).</p>
-    </li>
-    <li>
-      <p>Informative and understandable visualizations (Plotly Express).</p>
-    </li>
-    <li>
-      <p>Drawing conclusions.</p>
-    </li>
-    </ul>
-</p>
 
-<p><br></p>
-<p>
-<b>The data</b>
-</p>
-<p>After reviewing available sources, I discovered exciting data sets
-  in the <a href="https://data-explorer.oecd.org/">database of OECD</a>, describing the exposure of populations across the world to different weather phenomena in time. Focusing on extreme temperatures,
-  I performed a detailed analysis of the developments of the last 40 years. Adding <a href="https://data.giss.nasa.gov/gistemp/">climate data from NASA</a>
-  and <a href="https://unstats.un.org/unsd/snaama/">economic data from the United Nations</a>, I was able to answer even more questions
-  about the pressing issue.</p>
-<p>
-  The advantage of (inter)governmental bodies as a source of data is, that the data are highly reliable and also relatively clean.
-  Still, it was necessary to perform some cleaning and data wrangling to be able to proceed with all the intended calculations and merge different datasets together.
-  I did all this processing using <b>Pandas</b>.
-</p>
-<p>You can see the <b>code for cleaning</b> in the <b>cleaning.ipynb</b> notebook in my <a href="https://github.com/radek-kricek/population-exposure-climate-change">GitHub repository</a>.</p>
-<p><br></p>
-<p><b>The main topics of the analysis were:</b>
-<ul>
-<li>
-<p>What percentage of people have direct experience with extreme heat?</p>
-</li>
-<li>
-<p>Does this number change over time?</p>
-</li>
-<li>
-<p>How much is it related to the global temperature anomaly?</p>
-</li>
-<li>
-<p>Is there a clear link between wealth and heat exposure of populations?</p>
-</li>
-</ul>
-</p>
-<p>
-The first deep get-to-know with the data by using statistical methods belongs to the most exciting parts of my work as a data analyst.
-Until now, we can only guess but with real numbers, the true links, dependencies, and connections come to the surface.
-I used several useful tools to analyze the data. Pandas comes with calculations of <b>correlation coefficients</b>, which I used for establishing the link between time and population exposure of individual countries and of the world.
-What I was even more curious about was the assumed correlation between population exposure and temperature anomaly (how much warmer the climate is compared to the past).
-It proved to be really strong. Also, warming of about 1 °C led to about 15 % more people exposed to extreme heat worldwide (Fig 1).
-</p>
-<figure><img src="https://radek-kricek.github.io/pages/images/exp_vs_temp_anomaly.png"/>
-</figure>
-<p><i>Fig 1. Over the last 40 years, the temperature increased of about 1 °C, leading to about 15 % more people exposed to extreme heat worldwide.</i></p>
-<p>
-Another tools I used were libraries <b>Scikit-learn and SciPy, allowing me to apply k-means clustering and A/B testing</b>.
-</p>
-<p>
-<b>The code for the whole analysis</b> can be found in the <b>analysis.ipynb</b> notebook in my <a href="https://github.com/radek-kricek/population-exposure-climate-change">GitHub repository</a>.
-</p>
-<p><br></p>
-<p>
-  <b>Visualizations</b>
-</p>
-<p>
-Analysis and statistics are intriguing but visualizing goes with it hand in hand and allows real overall understanding.
-I decided to create simple but interactive visualizations in <b>Plotly Express</b>, which could also be exported as static and used in my graduation presentation.
-I got to practice choropleth maps, scatter plots and linecharts.
-</p>
-<p>
-  <b>The code for all visualizations</b> can be found in the <b>vizzes.ipynb</b> notebook in my <a href="https://github.com/radek-kricek/population-exposure-climate-change">GitHub repository</a> and all the plot files in the 'vizzes' folder.
-</p>
-<p><br></p>
-<p><b>Results</b></p>
-<p>
-  So, what were the main results the data revealed? First, the average <b>proportion of people who experienced extreme heat</b> at least one day per year was lately reaching up to 70 % worldwide and <b>grew fast</b> over the last four decades.
-The exposure also increased for most of the countries (Fig 2). There were several exceptions, which could have been caused for example by demographic changes and migrations within the countries.
-</p>
-<figure><img src="https://radek-kricek.github.io/pages/images/lineplot_countries.png"/>
-</figure>
-<p><i>Fig 2. For most countries, the population exposure to extreme heat increased, also shown by the dashed trend lines.</i></p>
-<p>
-  Second, it is possible to get insights from splitting countries into two groups <b>considering population exposure and GDP per capita</b> (using k-means). In one group, the level of inconvenience caused by heat exposure
-  is very large and low GDP per capita, or the GDP per capita is slightly larger but does not compensate for the level of heat.
-  In the second group, we find countries with low population exposures or higher exposures compensated by high GDP per capita.
-  From this I conclude that indeed <b>there is certain injustice about the effects of climate change on different countries</b> and present a map of the two groups.
-  Although the method is simple and results should be a subject of further discussion, I personally find it an interesting result to think about (Fig 3).
-</p>
-<figure><img src="https://radek-kricek.github.io/pages/images/clusters_2_legend.png"/>
-</figure>
-<p><i>Fig 3. Countries can be split into two groups, considering their exposure to heat and material well-being.</i></p>
-<p>
-  Curious about more insights into the data? You can find <b>all the results</b> in my <a href="https://radek-kricek.github.io/pages/presentation_graduation.pdf">graduation presentation</a>.
-</p>
-<p><br></p>
-<p>
-  <b>Next steps</b>
-</p>
-<p>
-  There is so much more to explore about this topic. I would be happy to continue when the time allows but if a curious reader wants to continue on their own, here is several suggestions:
-</p>
-<ul>
-  <li>
-  <p>Refine the method of splitting countries into groups based on their exposure to heat and economic situation.</p>
-  </li>
-  <li>
-  <p>Investigate how individual countries moved within the GDP/exposure space in the past.</p>
-  </li>
-  <li>
-  <p>Explore more about the impacts of climate change in the database of OECD: there is data on flooding, droughts, wildfires, and more.</p>
-  </li>
-  </ul>
 
-<!--
-<ul class="pa0">
-  
-   <li class="list di">
-     <a href="https://radek-kricek.github.io/pages/tags/python/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">python</a>
-   </li>
-  
-   <li class="list di">
-     <a href="https://radek-kricek.github.io/pages/tags/sql/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">sql</a>
-   </li>
-  
-   <li class="list di">
-     <a href="https://radek-kricek.github.io/pages/tags/tableau/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">tableau</a>
-   </li>
-  
-</ul>-->
+
 <div class="mt6 instapaper_ignoref">
       
       
       </div>
     </div>
-<!--
-    <aside class="w-30-l mt6-l">
 
-
-
-
-  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
-    <p class="f5 b mb3">Related</p>
-    <ul class="pa0 list">
-	   
-	     <li  class="mb2">
-          <a href="https://radek-kricek.github.io/pages/projects/game/">Game</a>
-        </li>
-	    
-    </ul>
-</div>
-
-</aside>-->
 
   </article>
 
