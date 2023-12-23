@@ -201,16 +201,94 @@
     </header>
     <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l">
 <p>The first weeks at my new job in data analytics inspired me to start using the 'minimize' optimization module from Python's 'scipy.optimize' package. What is it good for?
-  As the name suggests, they are about finding the optimal values for us to solve a problem.
-  More mathematically speaking, they search for minima of functions, including functions of more variables. And we can also set conditions for the search.
+  As the name suggests, it's about finding the optimal values for us to solve a problem.
+  More mathematically speaking, is searches for the minima of a given function, including functions of more variables. And we can also set conditions for the search.
   I found this module particularly useful for finding optimal values of variables when exact analytical solution led to values not reachable in real life.
 </p>
 
 <p><br></p>
 <p>
-  <b>Summary</b>
+  <b>The Principle</b>
 </p>
-<p>I performed my work in <b>Python</b>. The tasks included:</p>
+<p>
+  The 'minimize' module minimizes the value of a function.
+  This can be for example the difference between some desired values and values we are generating and which we cannot reach fully, like in the situation described below.
+  The solution is restricted by certain conditions and depends on several variables.
+  The algorithm searches for the extreme (in this case the minimum) of the function whch might look like in the pic.
+  It is important to note that it needs to start somewhere.
+  The starting point is set by the initial guess argument.
+  We can of course imagine functions with more complicated shape and multiple local minima.
+  The initial guess would then determine which minimum will be found so it is important to come up with a good estimate.
+  The algorithm chooses a mathematical approach best suited for the specific problem, but we can also give it the desired method as an argument. (<b>check it!</b>)
+  And one last note to the theory.
+  The package uses two types of conditions: bounds and constraints.
+  Bounds are simply the border values between which a certain variable can lie.
+  Constraints are additional conditions for the relationship between the variables.
+</p>
+
+<p><br></p>
+<p>
+  <b>An Example: Optmizing the Berlin Nightlife <b>emoticon</b></b>
+</p>
+<p>
+  Let's imagine something specific.
+  We could have a plan to visit clubs in Berlin in certain ratio of nights:
+  <ul>
+    <li>
+    <p>SchwuZ: 28 %</p>
+    </li>
+    <li>
+    <p>KitKat 22 %</p>
+    </li>
+    <li>
+      <p>Grosse Freiheit 15 %</p>
+    </li>
+    <li>
+      <p>Prinzknecht 25 %</p>
+    </li>
+    <li>
+      <p>Berghain 10 %</p>
+    </li>
+    </ul>
+  However, after 24 weeks of my stay in the city, out of 32, I realize I am pretty much off the track.
+  The current shares for clubs so far look like this:
+  <ul>
+    <li>
+    <p>SchwuZ: 16.2 %</p>
+    </li>
+    <li>
+    <p>KitKat 23.5 %</p>
+    </li>
+    <li>
+      <p>Grosse Freiheit 14.8 %</p>
+    </li>
+    <li>
+      <p>Prinzknecht 27.6 %</p>
+    </li>
+    <li>
+      <p>Berghain 17.9 %</p>
+    </li>
+    </ul>
+</p>
+
+<p>
+  If you do some simple calculations, you will see that with the remaining number of weeks, it is impossible to reach the original goal exactly.
+  The numbers would have to follow <b>this formula</b> and some values would fall outside of the 0 - 100 % interval.
+  But don't worry, it's not a big deal, let's try to approach it as much as possible.
+  For this we will use the optimization.
+  We need to minimize the difference between the targets and between values, which are determined by the equation above.
+  So this is the function to minimize!
+  It has five variables, corresponding to the five clubs, and we are looking for their optimal values.
+  We mustn't forget to set the boundaries (0 - 100) and our constraint (all five values need to sum up to 100 %).
+  And that's basically it.
+  The algorithm will search for the minimum of the function in the given range of values and satisfying our constraint.
+  <b>comment on local/global</b>
+  The differences between the goal and final shares range from about 0.9 to 3.4 %.
+  Interested in the code?
+  <a href="https://github.com/radek-kricek/optimization/blob/main/optimization.ipynb">Just check the notebook on my github!</a>
+</p>
+
+
 <p>
   <ul>
     <li>
