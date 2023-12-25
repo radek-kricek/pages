@@ -6,7 +6,7 @@
     
     <title>💻 Optimizing Nightlife | Radek Kříček</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="Optimization Case Study.">
+    <meta name="description" content="Optimization case study.">
     <meta name="generator" content="Hugo 0.117.0">
     
     
@@ -41,7 +41,7 @@
 <meta itemprop="wordCount" content="15">
 <meta itemprop="keywords" content="python,sql,tableau," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Optimizing Nightlife"/>
-<meta name="twitter:description" content="Optimization Case Study."/>
+<meta name="twitter:description" content="Optimization case study."/>
 
 	
 <style>
@@ -144,7 +144,7 @@
           <div class="f2 f1-l fw2 white-90 mb0 lh-title">Optimizing Nightlife</div>
           
             <div class="fw1 f5 f3-l white-80 measure-wide-l center lh-copy mt3 mb4">
-              Optimization Case Study.
+              Optimization case study.
             </div>
           
         
@@ -186,7 +186,7 @@
     <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l">
 <p>The first weeks at my new job in data analytics inspired me to start using the 'minimize' optimization module from Python's 'scipy.optimize' package. What is it good for?
   As the name suggests, it's about finding the optimal values for us to solve a problem.
-  More mathematically speaking, is searches for the minima of a given function, including functions of multiple variables. And we can also set conditions for the search.
+  More mathematically speaking, it searches for the minima of a given function, including functions of multiple variables. And we can also set conditions for the search.
   I found this module particularly useful for finding optimal values of variables when an exact analytical solution led to values that are not achievable in real life.
 </p>
 
@@ -200,16 +200,8 @@
   The 'minimize' module minimizes the value of a function.
   This can be, for example, the difference between some desired values and values that we generate and that we cannot achieve completely, as in the situation described below.
   The solution is restricted by certain conditions and depends on several variables.
-  The algorithm searches for the extreme value (in this case the minimum) of the function, which could look like in Fig. 1, for example.
-  It is important to note that it needs to start somewhere.
-  The starting point is set by the initial guess argument.
-  We can of course imagine functions with more complicated shape and multiple local minima.
-  The initial guess would then determine which minimum is found, so it is important to come up with a good estimate or try more options.
-  The algorithm chooses a mathematical approach that is suitable for the specific problem, but we can also give it the desired method as an argument.
-  And one last comment on the theory.
-  The package uses two types of conditions: bounds and constraints.
-  Bounds are simply the limits between which a certain variable can lie.
-  Constraints are additional conditions for the relationship between the variables.
+  An algorithm searches for the minimum of the function, which could look like in Fig. 1, for example
+  (in the picture with a maximum, the function can be always reverted to search for minimum).
 </p>
 
 <figure><img src="https://radek-kricek.github.io/pages/images/optimization_function.png"/>
@@ -218,8 +210,21 @@
   From wikimedia by IkamusumeFan under the <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.en">CC BY-SA 4.0 Deed license.</a></i></p>
 
 <p><br></p>
+
 <p>
-  <b>An Example: Optmizing the Berlin Nightlife <b>emoticon</b></b>
+It is important to note that the algorithm needs to start somewhere.
+The starting point is set by the initial guess argument.
+We can of course imagine functions with more complicated shape and multiple local minima.
+The initial guess would then determine which minimum is found, so it is important to come up with a good estimate or try more options.
+The algorithm chooses a mathematical approach that is suitable for the specific problem, but we can also give it the desired method as an argument.
+And one last comment on the theory.
+The package uses two types of conditions: bounds and constraints.
+Bounds are simply the limits between which a certain variable can lie.
+Constraints are additional conditions for the relationship between the variables.
+</p>
+
+<p>
+  <b>An Example: Optmizing the Berlin Nightlife</b> 🕺
 </p>
 <p>
   Let's imagine something specific.
@@ -267,18 +272,21 @@
   The numbers would have to follow the formula derived in Fig. 2 and some values would fall outside of the 0 - 100 % interval.
   But don't worry, it's not a big deal, let's try to approach the goal as much as possible.
   For this we will use the optimization.
-  We need to minimize the difference between the targets and between values which are determined by the equation above.
-  So this difference is the function to minimize!
-  It has five variables, corresponding to the five clubs, and we are looking for their optimal values.
-  We mustn't forget to set the boundaries (0 - 100) and our constraint (all five values need to sum up to 100 %).
-  And that's basically it.
-  The algorithm will search for the minimum of the function in the given range of values that satisfy our constraint.
-  The computed differences between the goal and final shares range from about 0.9 to 3.4 %.
-</p>
+</p>  
 
 <figure><img src="https://radek-kricek.github.io/pages/images/optimization_math.png"/>
 </figure>
-<p><i>Fig 2. The math behind the problem.</i></p>
+<p><i>Fig 2. The math behind the problem (see also the notebook below).</i></p>
+
+<p>  
+  We need to minimize the difference between the targets and between values which are determined by the equation above.
+  So this difference is the function to minimize!
+  It has five variables, corresponding to the five clubs, and we are looking for their optimal values.
+  We mustn't forget to set the boundaries (all values between 0 and 100 %) and our constraint (all five values together need to sum up to 100 %).
+  And that's basically it.
+  The algorithm will search for the minimum of the function in the given range of values that satisfy our constraint.
+  <b>The computed differences between the goal and final shares range from about 0.9 to 3.4 %.</b>
+</p>
 
 <p>
   A note: in this case, a different initial guess leads virtually to the same result.
